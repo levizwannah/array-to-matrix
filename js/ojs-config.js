@@ -9,7 +9,7 @@
 * ----------------------------------
 */
 route.basePath(''); // === '/'
-
+if(route.url().hostname !== '127.0.0.1') route.basePath('array-to-matrix');
 /*-----------------------------------
 | Set the global runtime prefix.
 | This prefix will be appended
