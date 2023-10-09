@@ -14,6 +14,7 @@ class App extends OpenScript.Component {
           {
             class: "form-control",
             id: "input-arrays",
+            rows: "8",
             oninput: this.method("getInput", "${this}"),
           },
 `
@@ -66,11 +67,11 @@ class Matrix extends OpenScript.Component {
 
   format(input, level = 0) {
     let elem = 'td';
-    let attr = {class: 'border p-3'};
+    let attr = {class: 'border-2 p-3'};
 
-    if(level % 2 !== 0) elem = 'tr', attr = {class: 'border mb-2'};
+    if(level % 2 !== 0) elem = 'tr', attr = {class: 'border-2 mb-2'};
 
-    if (typeof input in this.types) return h[elem](input, attr);
+    if (typeof input in this.types) return h[elem](h.b(input), attr);
 
     return h[elem](
         h.call(() => {
