@@ -4,9 +4,9 @@ class App extends OpenScript.Component {
 
     return h.div(
       { class: "container p-3" },
-      h.h1("Visualize nD Arrays", { class: "text-center" }),
+      h.h1("Visualize any NxN Array", { class: "text-center" }),
 
-      h.h3("Input"),
+      h.h3("Input "),
       h.div(
         { class: "form-group mb-4" },
         h.label({ for: "input-arrays" }, "Enter your Array in JSON format"),
@@ -29,6 +29,7 @@ class App extends OpenScript.Component {
       ),
 
       h.h2("Output"),
+      h.a('Love it? Star it on Github', {href: 'https://github.com/levizwannah/array-to-matrix'}),
       h.div(
         { class: "container overflow-auto border rounded p-3" },
         h.MatrixView(input)
